@@ -1,4 +1,4 @@
-package list
+package list_task
 
 import "github.com/spf13/cobra"
 

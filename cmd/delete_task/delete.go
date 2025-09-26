@@ -1,10 +1,10 @@
-package update
+package delete_task
 
 import "github.com/spf13/cobra"
 
-var UpdateCommand = &cobra.Command{
-	Use:   "update",
-	Short: "update the description of a task",
+var DeleteCmd = &cobra.Command{
+	Use:   "delete",
+	Short: "delete a task",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return nil
 	},

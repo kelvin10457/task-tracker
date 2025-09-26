@@ -27,8 +27,8 @@ func Load() (Config, error) {
 		Name:   os.Getenv("DB_NAME"),
 		Params: os.Getenv("DB_PARAMS"),
 	}
-	//this is a validation if the length of the slice is greater than zero you need
-	// to check your environment variables
+	//if the length of the missing environment variables is
+	//greater than zero you need to check your environment variables
 
 	//we don't check params because it's optional
 	missing := []string{}

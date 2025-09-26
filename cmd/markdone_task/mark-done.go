@@ -1,4 +1,4 @@
-package markdone
+package markdone_task
 
 import "github.com/spf13/cobra"
 
