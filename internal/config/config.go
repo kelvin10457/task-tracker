@@ -18,7 +18,7 @@ type Config struct {
 }
 
 func Load() (Config, error) {
-	_ = godotenv.Load() //this is for loading every environment variable and ignoring the error
+	_ = godotenv.Load() //this is for loading every environment (from .env) variable and ignoring the error
 	cfg := Config{
 		User:   os.Getenv("DB_USER"), //you create an instance of a struct config
 		Pass:   os.Getenv("DB_PASS"), //with os.Getenv("NAME_OF_VARIABLE") you get the value
@@ -60,7 +60,7 @@ func Load() (Config, error) {
 //the format is:
 //usermame:password@tcp(host:port)/nameOfDataBase
 
-// the format is like this if we use params
+// the format is like this if we use params:
 //
 //usermame:password@tcp(host:port)/nameOfDataBase?params
 func (config Config) DSN() string {

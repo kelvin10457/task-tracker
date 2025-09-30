@@ -1,4 +1,4 @@
-package markdone_task
+package markinprogress_task
 
 import (
 	"errors"
@@ -9,8 +9,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var MarkDoneCmd = &cobra.Command{
-	Use:   "mark-done <id>",
+var MarkInProgressCmd = &cobra.Command{
+	Use:   "mark-in-progress <id>",
 	Short: "update the status of a task with the id",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -28,7 +28,7 @@ var MarkDoneCmd = &cobra.Command{
 			return errors.New("the id might be a number")
 		}
 
-		query := "UPDATE task SET status_task = 'done' WHERE id_task = ?;"
+		query := "UPDATE task SET status_task = 'in-progress' WHERE id_task = ?;"
 		result, err := db.Exec(
 			query,
 			id,
